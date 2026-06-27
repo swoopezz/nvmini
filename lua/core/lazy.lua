@@ -5,7 +5,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
   	local lazyrepo = "https://github.com/folke/lazy.nvim.git"
   	local out = vim.fn.system({
   	    "git", "clone", "--filter=blob:none", "--branch=stable",
-  	    lazyrepo, lazypath 
+  	    lazyrepo, lazypath
   	})
 
   	if vim.v.shell_error ~= 0 then
@@ -31,5 +31,5 @@ require("lazy").setup({
   	  { import = "plugins" },
   	},
   	install = { colorscheme = { "habamax" } },
-  	checker = { enabled = true },
+  	checker = { enabled = false },
 })

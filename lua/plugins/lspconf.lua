@@ -6,9 +6,14 @@ return {
 				globals = { 'vim' }
 			}}}}},
 			{ 'neocmake' },
-			{ 'clangd', { init_options = {
-				fallbackFlags = { '--std=c20' }
-			}}},
+			{ 'clangd', {
+				cmd = {
+					'clangd', '--clang-tidy',
+				},
+				init_options = {
+					fallbackFlags = { '--std=c20' }
+				}
+			}},
 		}
 		for _, lsp in pairs(lsps) do
 			local name, conf = lsp[1], lsp[2]
@@ -18,6 +23,8 @@ return {
         		vim.lsp.config(name, conf)
 			end
 		end
-
+		vim.diagnostic.config({
+			virtual_text = { spacing = 1, prefix = "󰗖 " },
+		})
 	end
 }
