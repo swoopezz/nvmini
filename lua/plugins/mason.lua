@@ -13,11 +13,12 @@ return {
 		require('mason').setup({})
 		local registry = require('mason-registry')
 
+		vim.cmd('MasonUpdate')
 		for _, tool in pairs(opts.ensure_installed) do
 			if not registry.get_package(tool):is_installed() then
 				vim.cmd('MasonInstall ' .. tool)
 			end
-
 		end
+		
 	end
 }
