@@ -1,0 +1,2 @@
+# nvmini
+Nvim minimal setup
