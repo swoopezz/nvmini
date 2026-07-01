@@ -9,3 +9,6 @@ vim.opt.relativenumber = true
 
 vim.opt.smartcase = true
 vim.opt.guicursor='n-v-c-i:block'
+
+vim.opt.completeopt = { "menuone","noselect","noinsert", "popup","preview" }
+vim.opt.shortmess:append "c"
