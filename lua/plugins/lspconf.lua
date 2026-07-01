@@ -23,8 +23,9 @@ return {
         		vim.lsp.config(name, conf)
 			end
 		end
-		vim.diagnostic.config({
-			virtual_text = { spacing = 1, prefix = "󰗖 " },
-		})
+-- virtual text diagnostic uncomment this if you need it
+--		vim.diagnostic.config({
+--			virtual_text = { spacing = 1, prefix = "󰗖 " },
+--		})
 	end
 }

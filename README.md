@@ -1,6 +1,10 @@
 # Nvim minimal setup for C++
 
-### Installation:
+### Key maps
+Ctrl+N = Open project tree
+Ctrl+S = Open find files menu
+
+### Installation
 ```bash
 mkdir -p ~/.config/nvim
 git clone https://github.com/swoopezz/nvmini ~/.config/nvim && nvim

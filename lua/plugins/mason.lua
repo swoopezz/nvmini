@@ -1,24 +1,28 @@
 return {
 	'mason-org/mason.nvim',
+	dependencies = {
+		'mason-org/mason-registry'
+	},
 	opts_extend = { "ensure_installed" },
 	opts = {
 		ensure_installed = {
-			'clangd',
-			'neocmakelsp',
-			'lua-language-server',
+			'clangd',    			-- C++/C
+			'neocmakelsp', 			-- CMake
+			'lua-language-server',  -- Lua
 		},
 	},
 
 	config = function(_, opts)
 		require('mason').setup({})
 		local registry = require('mason-registry')
+		registry.refresh()
 
-		vim.cmd('MasonUpdate')
 		for _, tool in pairs(opts.ensure_installed) do
-			if not registry.get_package(tool):is_installed() then
-				vim.cmd('MasonInstall ' .. tool)
+			local pack = registry.get_package(tool)
+
+			if not pack:is_installed() then
+				pack:install()
 			end
 		end
-		
 	end
 }
