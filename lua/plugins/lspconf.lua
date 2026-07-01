@@ -8,11 +8,9 @@ return {
 			{ 'neocmake' },
 			{ 'clangd', {
 				cmd = {
-					'clangd', '--clang-tidy',
+					'clangd',
+					'--clang-tidy',
 				},
-				init_options = {
-					fallbackFlags = { '--std=c20' }
-				}
 			}},
 		}
 		for _, lsp in pairs(lsps) do
