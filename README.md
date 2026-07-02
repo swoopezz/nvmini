@@ -1,8 +1,8 @@
 # Nvim minimal setup for C++
 
 ### Key maps
-Ctrl+N = Open project tree
-Ctrl+S = Open find files menu
+<p>Ctrl+N = Open project tree</p>
+<p>Ctrl+S = Open find files menu</p>
 
 ### Installation
 ```bash
